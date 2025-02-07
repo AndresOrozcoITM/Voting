@@ -1,4 +1,3 @@
-# 
 # Voting System API
 
 ## Descripción
@@ -15,7 +14,7 @@ Este proyecto es una API RESTful para gestionar un sistema de votaciones, desarr
 
 1. Clonar el repositorio:
    ```sh
-   git clone https://github.com/AndresOrozcoITM/Voting
+   git clone https://github.com/tu-usuario/voting-system-api.git
    cd voting-system-api
    ```
 2. Instalar dependencias:
@@ -26,14 +25,14 @@ Este proyecto es una API RESTful para gestionar un sistema de votaciones, desarr
    ```env
    PORT=5000
    DB_HOST=localhost
-   DB_NAME=voting_db
+   DB_NAME=voting_system
    DB_USER=root
    DB_PASS=tu_contraseña
    SECRET_KEY=supersecretkey
    ```
 4. Configurar la base de datos en MySQL:
    ```sql
-   CREATE DATABASE voting_db;
+   CREATE DATABASE voting_system;
    ```
 5. Ejecutar el servidor:
    ```sh
