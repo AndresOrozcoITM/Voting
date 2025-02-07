@@ -89,6 +89,35 @@ curl -X POST http://localhost:5000/votes \
 
 Se deben agregar capturas de pantalla de los resultados obtenidos en el endpoint `/votes/statistics`.
 
+## Configuración de la Base de Datos
+
+```sql
+CREATE DATABASE voting_system;
+
+USE voting_system;
+
+CREATE TABLE voters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    has_voted BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE candidates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    party VARCHAR(255)
+);
+
+CREATE TABLE votes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    voter_id INT,
+    candidate_id INT,
+    FOREIGN KEY (voter_id) REFERENCES voters(id),
+    FOREIGN KEY (candidate_id) REFERENCES candidates(id)
+);
+```
+
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Para ello, crea un fork del repositorio y envía un pull request.
